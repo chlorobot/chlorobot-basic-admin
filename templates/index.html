@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+    <title>Chlorobot Admin</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <style>
+body {
+  background:#111;
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+    <div class="col-md-12">
+            <img class="float-right" src="https://chlorobot.com/images/avatar.jpg" />
+    </div>
+    </div>
+    <div class="row">
+    <div class="col-md-12">
+        <table class="table table-light table-striped">
+            <thead class="thead thead-dark">
+                <tr>
+                    <th scope="col">Component</th>
+                    <th scope="col">State</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for item in data %}
+                <tr>
+                    <th scope="row">{{ data[item].name }}</th>
+                    {% if data[item].default != data[item].state %}<td class="bg-success">{% else %}<td class="bg-danger">{% endif %}
+                    {% if data[item].default != data[item].state %}
+                        <a class="btn btn-success btn-block" href="/?action={{ item }}">
+                        {% else %}
+                        <a class="btn btn-danger btn-block" href="/?action={{ item }}">
+                        {% endif %}
+                            {% if data[item].default == data[item].state %}Off{% else %}On{% endif %}
+                        </a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</body>
+</html>
+
