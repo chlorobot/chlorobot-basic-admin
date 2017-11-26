@@ -39,6 +39,12 @@ Install dependencies
     pip install flask
     sudo apt-get install supervisor
 
+Copy supervisor configuration and start application
+
+    sudo cp chlorobot-admin.conf /etc/supervisor/conf.d/
+    sudo supervisorctl reread
+    sudo supervisorctl reload
+
 Edit app.py, edit PINS dictionary to map your device's to their GPIO pins.
 
     python app.py
