@@ -5,6 +5,8 @@ A basic web interface to toggle chlorobot's relays - will be superseded by a com
 ![chlorobot basic admin](/screenshot.png "chlorobot basic admin")
 
 
+![Read blog post here](https://chlorobot.com/relay/python/flask/2017/11/26/new-interface/)
+
 Physical layout and GPIO / pin / plug / strap / device mappings
 
     Mains Gang Layout
