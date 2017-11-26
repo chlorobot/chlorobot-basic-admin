@@ -12,7 +12,7 @@ app = Flask(__name__)
 # Setup GPIO for all relays listed above in PINS
 [GPIO.setup(PINS.get(x).get('gpio'), GPIO.OUT) for x in PINS]
 
-# Set the state of each GPIO after setup for toggling
+# Read and update the state mapping of each GPIO
 [PINS.get(x).update({'state' : GPIO.input(PINS.get(x).get('gpio'))}) for x in PINS]
 
 
