@@ -47,7 +47,7 @@ Copy supervisor configuration and start application
     sudo supervisorctl reread
     sudo supervisorctl reload
 
-Edit app.py, edit PINS dictionary to map your device's to their GPIO pins.
+Edit config.py - modify the PINS dictionary to map your device's to the appropriate GPIO pins.
 
     python app.py
 
